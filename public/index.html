@@ -3,10 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="theme-color" content="#000000" />
     <!--
       manifest.json provides metadata used when your web app is added to the
@@ -22,7 +19,78 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Programski Prevodioci</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+      /* Remove the navbar's default margin-bottom and rounded borders */
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+
+      .nopadding {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .divborderleft {
+        border-left: 5px solid gray;
+      }
+
+      .input-block-level {
+        width: 100%;
+        min-height: 28px;
+      }
+
+      .divborderright {
+        border-right: 5px solid gray;
+      }
+
+      /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+      .row.content {
+        height: auto;
+      }
+
+      /* Set gray background color and 100% height */
+      .sidenav {
+        padding-top: 20px;
+        background-color: #f1f1f1;
+        height: auto;
+      }
+
+      /* Set black background color, white text and some padding */
+      footer {
+        background-color: #555;
+        color: white;
+        padding: 15px;
+      }
+
+      .btn-group {
+        display: flex;
+        justify-content: center;
+      }
+
+      .btn-group > input.btn {
+        flex-grow: 1;
+      }
+
+      /* On small screens, set height to 'auto' for sidenav and grid */
+      @media screen and (max-width: 767px) {
+        .sidenav {
+          height: auto;
+          padding: 15px;
+        }
+        .row.content {
+          height: auto;
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
