@@ -14,7 +14,7 @@ class CreatePlant extends Component {
   addPlant = () => {
     if (this.validate()) {
       axios
-        .post('http://127.0.0.1:8000/api/plants', {
+        .post(this.props.API, {
           plantingMonth: this.state.plantingMonth,
           harvestingMonth: this.state.harvestingMonth,
           plantingPlace: this.state.plantingPlace,
@@ -114,11 +114,16 @@ class CreatePlant extends Component {
           <tr>
             <th>
               <input
-                maxLength="5"
+                maxLength="2"
                 class="input-block-level "
-                type="number"
+                type="text"
+                pattern="\d*"
                 value={this.state.plantingDepth}
-                onChange={event => this.setState({ plantingDepth: event.target.value })}
+                onChange={event =>
+                  this.setState({
+                    plantingDepth: event.target.value > 25 ? 25 : event.target.value
+                  })
+                }
               />
             </th>
           </tr>

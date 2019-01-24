@@ -12,6 +12,7 @@ import {
 import CreatePlant from './CreatePlant';
 import Filter from './Filter';
 
+const API = 'http://127.0.0.1:8000/api/plants';
 class App extends Component {
   state = {
     plants: [],
@@ -33,9 +34,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get('http://127.0.0.1:8000/api/plants', { filter: this.state.filter })
-      .then(res => this.setState({ plants: res.data }));
+    axios.get(API, { filter: this.state.filter }).then(res => this.setState({ plants: res.data }));
   }
 
   appendPlant = plant => {
@@ -92,7 +91,7 @@ class App extends Component {
         <div class="container-fluid text-center">
           <div class="row content">
             <div class="col-sm-2 sidenav border-2 flex-grow nopadding divborderright">
-              <Filter filterPlants={plants => this.filterPlants(plants)} />
+              <Filter API={API} filterPlants={plants => this.filterPlants(plants)} />
             </div>
             <div class="col-sm-8 text-left table-responsive nopadding ">
               <table class="table table-responsive table-striped border border-dark border-3">
@@ -111,7 +110,7 @@ class App extends Component {
               </table>
             </div>
             <div class="col-sm-2 sidenav nopadding divborderleft">
-              <CreatePlant appendPlant={plant => this.appendPlant(plant)} />
+              <CreatePlant API={API} appendPlant={plant => this.appendPlant(plant)} />
             </div>
           </div>
 

@@ -22,7 +22,7 @@ class Filter extends Component {
 
   filter = () => {
     axios
-      .get('http://127.0.0.1:8000/api/plants', { params: { filter: this.state.filter } })
+      .get(this.props.API, { params: { filter: this.state.filter } })
       .then(res => this.props.filterPlants(res.data));
   };
 
@@ -174,9 +174,10 @@ class Filter extends Component {
           <tr>
             <th>
               <input
-                max="5"
+                max="2"
                 class="input-block-level "
-                type="number"
+                type="text"
+                pattern="\d*"
                 value={this.state.plantingDepth}
                 onChange={event =>
                   this.setState({
